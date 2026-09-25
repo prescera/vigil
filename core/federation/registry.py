@@ -95,5 +95,6 @@ def _ensure_builtins_loaded() -> None:
             adapter as _defender_adapter,
         )
         from core.integrations.splunk import adapter as _splunk_adapter  # noqa: F401
+        from core.integrations.wazuh import adapter as _wazuh_adapter  # noqa: F401
     except Exception as e:
         logger.warning("Failed to load builtin federation adapters: %s", e)

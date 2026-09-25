@@ -49,6 +49,10 @@ NOT_SETTINGS = {
     "VSTRIKE_INBOUND_API_KEY",
     "VSTRIKE_PASSWORD",
     "VSTRIKE_USERNAME",
+    "WAZUH_API_PASSWORD",
+    "WAZUH_API_USERNAME",
+    "WAZUH_INDEXER_PASSWORD",
+    "WAZUH_INDEXER_USERNAME",
     # Integration endpoints and options consumed inside MCP server child
     # processes, whose config protocol is the environment they are spawned with.
     "ATOMIC_RED_TEAM_ATOMICS_PATH",
@@ -73,6 +77,11 @@ NOT_SETTINGS = {
     "TIMESKETCH_URL",
     "VSTRIKE_BASE_URL",
     "VSTRIKE_VERIFY_SSL",
+    "WAZUH_ALERTS_INDEX",
+    "WAZUH_API_URL",
+    "WAZUH_INDEXER_URL",
+    "WAZUH_MIN_RULE_LEVEL",
+    "WAZUH_VERIFY_SSL",
     # core.platform.runtime_config ENV_FALLBACKS: DB-first settings whose env var is
     # only the fallback when the system_config row is absent.
     "LOCAL_OLLAMA_RECOVERY_ENABLED",

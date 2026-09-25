@@ -55,6 +55,7 @@ LAZY_SINGLETON_ALLOWED = {
     ("core/llm/providers/registry.py", "get_registry"),
     ("core/integrations/elastic/tool.py", "get_elastic_service"),
     ("core/integrations/splunk/tool.py", "get_splunk_service"),
+    ("core/integrations/wazuh/tool.py", "get_wazuh_service"),
     ("core/integrations/vstrike/client.py", "get_vstrike_service"),
     # Module-private and already injectable: every caller may pass its own
     # ``data_service``, and this only defers the connection for those that don't.
@@ -93,7 +94,10 @@ def _callee_name(node: ast.AST):
 def _env_reads(rel_path: Path):
     lines, tree = _parse(rel_path)
     for node in ast.walk(tree):
-        if not isinstance(node, ast.Attribute) or node.attr not in ("getenv", "environ"):
+        if not isinstance(node, ast.Attribute) or node.attr not in (
+            "getenv",
+            "environ",
+        ):
             continue
         if not (isinstance(node.value, ast.Name) and node.value.id == "os"):
             continue

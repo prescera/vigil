@@ -16,6 +16,7 @@ const SOURCE_BADGES: Record<string, SourceBadge> = {
   elastic: { label: 'Elastic', color: '#f0bf1a', icon: 'bolt' },
   'elastic-siem': { label: 'Elastic', color: '#f0bf1a', icon: 'bolt' },
   'aws-security-hub': { label: 'Security Hub', color: '#e88b1a', icon: 'shield' },
+  wazuh: { label: 'Wazuh', color: '#3d82f1', icon: 'shield' },
   webhook: { label: 'Webhook', color: '#8a90a6', icon: 'link' },
   // The daemon's known-answer self-test (#923), not a connector.
   probe: { label: 'Probe', color: '#a78bfa', icon: 'bot' },

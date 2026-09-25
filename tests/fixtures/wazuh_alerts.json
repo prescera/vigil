@@ -1,0 +1,67 @@
+[
+  {
+    "_index": "wazuh-alerts-4.x-2026.09.25",
+    "_id": "Xk3bQ5IBv1a2c3d4e5f6",
+    "_source": {
+      "timestamp": "2026-09-25T10:23:45.123+0000",
+      "id": "1758795825.4412",
+      "rule": {
+        "level": 10,
+        "description": "sshd: brute force trying to get access to the system. Non existent user.",
+        "id": "5712",
+        "mitre": {"id": ["T1110"], "tactic": ["Credential Access"], "technique": ["Brute Force"]},
+        "groups": ["syslog", "sshd", "authentication_failures"],
+        "pci_dss": ["11.4", "10.2.4", "10.2.5"],
+        "gdpr": ["IV_35.7.d", "IV_32.2"]
+      },
+      "agent": {"id": "003", "name": "web01", "ip": "10.0.2.15"},
+      "manager": {"name": "wazuh-manager"},
+      "decoder": {"name": "sshd", "parent": "sshd"},
+      "data": {"srcip": "203.0.113.7", "srcuser": "oracle"},
+      "location": "/var/log/auth.log",
+      "full_log": "Sep 25 10:23:45 web01 sshd[2211]: Invalid user oracle from 203.0.113.7 port 51234"
+    }
+  },
+  {
+    "_index": "wazuh-alerts-4.x-2026.09.25",
+    "_id": "Yl4cR6JCw2b3d4e5f6g7",
+    "_source": {
+      "timestamp": "2026-09-25T11:02:10.000+0000",
+      "id": "1758798130.9981",
+      "rule": {
+        "level": 12,
+        "description": "Multiple Windows logon failures",
+        "id": "60204",
+        "mitre": {"id": ["T1110.001", "T1078"]},
+        "groups": ["windows", "authentication_failures"]
+      },
+      "agent": {"id": "007", "name": "DC01", "ip": "10.0.1.10"},
+      "manager": {"name": "wazuh-manager"},
+      "decoder": {"name": "windows_eventchannel"},
+      "data": {
+        "win": {
+          "system": {"computer": "DC01.corp.local", "eventID": "4625"},
+          "eventdata": {"ipAddress": "10.0.3.44", "targetUserName": "svc_backup"}
+        }
+      },
+      "location": "EventChannel"
+    }
+  },
+  {
+    "_index": "wazuh-alerts-4.x-2026.09.25",
+    "_id": "Zm5dS7KDx3c4e5f6g7h8",
+    "_source": {
+      "timestamp": "2026-09-25T12:30:00.500+0000",
+      "id": "1758803400.1234",
+      "rule": {"level": 15, "description": "Integrity checksum changed.", "id": "550", "groups": ["ossec", "syscheck"]},
+      "agent": {"id": "003", "name": "web01", "ip": "10.0.2.15"},
+      "syscheck": {
+        "path": "/usr/bin/sshd",
+        "sha256_after": "a3f5c9e1d2b4a6c8e0f1a2b3c4d5e6f708192a3b4c5d6e7f8091a2b3c4d5e6f7",
+        "md5_after": "0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+        "uname_after": "root"
+      },
+      "location": "syscheck"
+    }
+  }
+]

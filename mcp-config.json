@@ -97,6 +97,15 @@
       }
     },
 
+    "wazuh": {
+      "command": "python3",
+      "args": ["core/integrations/wazuh/tool.py"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "_setup_note": "Wazuh via the indexer (alerts) and optionally the server API (agents, inventory). Configure in Settings (indexer URL + credentials, optional API URL + credentials). The tool reads via resolve(); there is no required env placeholder, so the server is not treated as dormant until those values exist."
+      }
+    },
+
     "pagerduty": {
       "command": "uvx",
       "args": ["pagerduty-mcp==1.1.0", "--enable-write-tools"],

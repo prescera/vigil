@@ -222,6 +222,7 @@ def test_every_audited_integration_is_registered():
         "osquery",
         "cuckoo",
         "vstrike",
+        "wazuh",
     }
     missing = expected - set(INTEGRATION_SECRET_FIELDS.keys())
     assert not missing, f"Integrations missing from registry: {sorted(missing)}"

@@ -107,6 +107,7 @@ CAPABILITIES: Dict[str, Tuple[Candidate, ...]] = {
         # splunk_execute first: it takes earliest, which nl_search cannot express.
         Candidate("splunk-selfhosted", ("splunk_execute", "splunk_nl_search")),
         Candidate("elastic", ("elastic_search_logs", "elastic_search_by_ioc")),
+        Candidate("wazuh", ("wazuh_search_alerts", "wazuh_search_by_ioc")),
         # Third-party servers: unverifiable from this repo, so these are preferences
         # matched against whatever the server reports.
         Candidate("splunk", ("run_splunk_search", "search", "oneshot_search")),
