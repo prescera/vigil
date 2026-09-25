@@ -141,6 +141,13 @@ export const aiDecisionsApi = {
     api.get('/ai/decisions/pending-feedback', { params: { limit } }),
 }
 
+export const evolutionApi = {
+  listCycles: () => api.get('/evolution/cycles'),
+  getCycle: (cycleId: string) => api.get(`/evolution/cycles/${cycleId}`),
+  listDetectors: () => api.get('/evolution/detectors'),
+  stats: (workflowId: string) => api.get(`/evolution/stats/${workflowId}`),
+}
+
 export const approvalsApi = {
   list: (params?: {
     status?: string

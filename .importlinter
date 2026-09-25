@@ -32,6 +32,7 @@ forbidden_modules =
     core.cases
     core.chat
     core.detections
+    core.evolution
     core.federation
     core.findings
     core.ingestion
