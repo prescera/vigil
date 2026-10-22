@@ -125,7 +125,7 @@ function ModelAssignmentPanel({ notify }: SectionProps) {
       {phase === 'ready' && (
         <>
           {providerIds.length === 0 && (
-            <EmptyState compact icon="sparkle" title="No assignable models discovered" body="Add and test at least one active provider before assigning models to Vigil components." />
+            <EmptyState compact icon="sparkle" title="No assignable models discovered" body="Add and test at least one active provider before assigning models to Prescera components." />
           )}
           <div className="table-wrap">
             <table className="tbl">

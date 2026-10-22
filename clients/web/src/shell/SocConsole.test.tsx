@@ -377,7 +377,7 @@ describe('SocConsole', () => {
 
   it('opens the chat dock without error', () => {
     renderConsole()
-    fireEvent.click(screen.getByRole('button', { name: /Ask Vigil/ }))
+    fireEvent.click(screen.getByRole('button', { name: /Ask Prescera/ }))
     expect(screen.getByText(/investigate a finding/)).toBeInTheDocument()
   })
 
@@ -387,9 +387,9 @@ describe('SocConsole', () => {
     // the next test's subject
     Object.defineProperty(window, 'innerWidth', { configurable: true, value: 1440 })
     renderConsole()
-    fireEvent.click(screen.getByRole('button', { name: /Ask Vigil/ }))
+    fireEvent.click(screen.getByRole('button', { name: /Ask Prescera/ }))
 
-    const separator = screen.getByRole('separator', { name: 'Resize Vigil Assistant' })
+    const separator = screen.getByRole('separator', { name: 'Resize Prescera Assistant' })
     expect(separator).toHaveAttribute('aria-valuenow', '500')
 
     fireEvent.keyDown(separator, { key: 'ArrowLeft' })
@@ -401,9 +401,9 @@ describe('SocConsole', () => {
     localStorage.setItem('soc.chat.width.v1', '700')
     Object.defineProperty(window, 'innerWidth', { configurable: true, value: 500 })
     renderConsole()
-    fireEvent.click(screen.getByRole('button', { name: /Ask Vigil/ }))
+    fireEvent.click(screen.getByRole('button', { name: /Ask Prescera/ }))
 
-    const separator = screen.getByRole('separator', { name: 'Resize Vigil Assistant' })
+    const separator = screen.getByRole('separator', { name: 'Resize Prescera Assistant' })
     expect(separator).toHaveAttribute('aria-valuemin', '500')
     expect(separator).toHaveAttribute('aria-valuemax', '500')
     expect(separator).toHaveAttribute('aria-valuenow', '500')
@@ -424,7 +424,7 @@ describe('SocConsole', () => {
 
   it('opens chat settings showing status, model and advanced sections', async () => {
     renderConsole()
-    fireEvent.click(screen.getByRole('button', { name: /Ask Vigil/ }))
+    fireEvent.click(screen.getByRole('button', { name: /Ask Prescera/ }))
     fireEvent.click(screen.getByRole('button', { name: 'Chat settings' }))
     expect(await screen.findByText('2/2')).toBeInTheDocument()
     expect(screen.getByText(/Context ~/)).toBeInTheDocument()
@@ -535,8 +535,8 @@ describe('SocConsole', () => {
     } as unknown as Response)
 
     renderConsole()
-    fireEvent.click(screen.getByRole('button', { name: /Ask Vigil/ }))
-    fireEvent.change(screen.getByPlaceholderText(/Ask Vigil/), { target: { value: 'hi' } })
+    fireEvent.click(screen.getByRole('button', { name: /Ask Prescera/ }))
+    fireEvent.change(screen.getByPlaceholderText(/Ask Prescera/), { target: { value: 'hi' } })
     fireEvent.click(screen.getByRole('button', { name: 'Send' }))
 
     // waitFor re-queries each poll, so it settles on the final message node and

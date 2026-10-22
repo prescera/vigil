@@ -133,7 +133,7 @@ export default function AiBudgetsPanel({ notify }: SectionProps) {
             compact
             icon="sparkle"
             title="No virtual keys"
-            body="Without one, calls run unmetered and no budget is enforced. Create a key with a monthly ceiling and point Vigil at it below."
+            body="Without one, calls run unmetered and no budget is enforced. Create a key with a monthly ceiling and point Prescera at it below."
             primary={{ label: 'New key', onClick: () => setEditing({ vk: null }), icon: 'plus' }}
           />
         )}
@@ -142,7 +142,7 @@ export default function AiBudgetsPanel({ notify }: SectionProps) {
             <table className="tbl">
               <thead>
                 <tr>
-                  <th>Name</th><th>Budget</th><th>Rate limits</th><th>Status</th><th>Used by Vigil</th>
+                  <th>Name</th><th>Budget</th><th>Rate limits</th><th>Status</th><th>Used by Prescera</th>
                   <th style={{ textAlign: 'right' }}>Actions</th>
                 </tr>
               </thead>
@@ -216,7 +216,7 @@ export default function AiBudgetsPanel({ notify }: SectionProps) {
       </SettingsCard>
 
       <SettingsCard
-        title="What Vigil sends"
+        title="What Prescera sends"
         desc="The key presented as x-bf-vk on every upstream call, and what to do when the gateway refuses one. DEV_MODE=true or LLM_BUDGET_UNLIMITED=true bypasses enforcement entirely."
       >
         {vigilPhase === 'loading' ? (
@@ -272,7 +272,7 @@ export default function AiBudgetsPanel({ notify }: SectionProps) {
             // to copy out of a toast.
             if (!editing.vk && saved?.value && !isMasked(saved.value)) {
               await persistVigilSide(saved.value, enforcement)
-              notify('ok', `Created ${saved.name} and pointed Vigil at it.`)
+              notify('ok', `Created ${saved.name} and pointed Prescera at it.`)
             } else {
               notify('ok', 'Virtual key saved.')
             }
@@ -287,7 +287,7 @@ export default function AiBudgetsPanel({ notify }: SectionProps) {
           confirmDel
             ? `Delete "${confirmDel.name}"? Its budget and rate limits go with it.${
                 confirmDel.value && confirmDel.value === activeVk
-                  ? ' Vigil is currently sending this key, so LLM calls will run unmetered until another is set.'
+                  ? ' Prescera is currently sending this key, so LLM calls will run unmetered until another is set.'
                   : ''
               }`
             : ''

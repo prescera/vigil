@@ -64,7 +64,7 @@ function ManualUploadPanel({ notify }: SectionProps) {
   return (
     <SettingsCard
       title="Manual Upload"
-      desc="Upload a local file directly into Vigil. Large files keep ingesting in the background — you can leave this page."
+      desc="Upload a local file directly into Prescera. Large files keep ingesting in the background — you can leave this page."
     >
       <div className="flex items-center gap-2.5 flex-wrap">
         <input

@@ -90,5 +90,5 @@ export const TITLES: Record<ConsoleScreenKey, [string, string]> = {
   autoops: ['Auto Ops', 'Autonomous operations — master orchestrator and sub-agent investigations'],
   evolution: ['Evolution', 'Self-evolving workflows — mined run statistics, detected gaps, and validated Playbook improvements'],
   health: ['Health', 'Operational health — LLM spend, approvals waiting, recent workflow runs'],
-  settings: ['Settings', 'Configure Vigil — AI, integrations, users and platform'],
+  settings: ['Settings', 'Configure Prescera — AI, integrations, users and platform'],
 }

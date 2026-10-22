@@ -127,7 +127,7 @@ const DataSourceDialog = ({ onSaved }: Props) => {
   return (
     <div className="flex flex-col gap-3">
       <p className="text-sm text-tx-2">
-        Connect a SIEM, EDR, or other telemetry source so Vigil has alerts to triage. Search and
+        Connect a SIEM, EDR, or other telemetry source so Prescera has alerts to triage. Search and
         pick one — you can add more anytime in Settings → Integrations.
       </p>
       <TextInput

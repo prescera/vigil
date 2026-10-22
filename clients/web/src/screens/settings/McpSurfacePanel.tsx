@@ -58,7 +58,7 @@ export default function McpSurfacePanel({ notify }: SectionProps) {
       notify(
         enabled ? 'info' : 'ok',
         enabled
-          ? 'MCP surface is on. Vigil’s tools are reachable from the network.'
+          ? 'MCP surface is on. Prescera’s tools are reachable from the network.'
           : 'MCP surface is off.',
       )
       load()
@@ -103,10 +103,10 @@ export default function McpSurfacePanel({ notify }: SectionProps) {
 
   return (
     <div className="panel">
-      <h3>Vigil’s MCP server</h3>
+      <h3>Prescera’s MCP server</h3>
       <p className="muted">
-        Vigil’s own tools — findings, cases, the approval queue — served at{' '}
-        <code>{surface.path}</code> so callers that are not Vigil can use them. Vigil’s own agent
+        Prescera’s own tools — findings, cases, the approval queue — served at{' '}
+        <code>{surface.path}</code> so callers that are not Prescera can use them. Prescera’s own agent
         reaches the same tools either way, so leaving this off costs nothing internally.
       </p>
 

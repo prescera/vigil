@@ -40,7 +40,7 @@ const BudgetDialog = ({ onClose, onSaved }: Props) => {
   const save = () => {
     // the cap is enforced through the vk, so it is the one required field
     if (!vk.trim()) {
-      setVkError('Add a Bifrost virtual key — Vigil enforces the spend cap through it.')
+      setVkError('Add a Bifrost virtual key — Prescera enforces the spend cap through it.')
       return
     }
     run(async () => {
@@ -56,12 +56,12 @@ const BudgetDialog = ({ onClose, onSaved }: Props) => {
     <div className="flex flex-col gap-3.5">
       {error && <Banner kind="err">{error}</Banner>}
       <p className="text-sm text-tx-2">
-        Cap spend through a Bifrost virtual key. Vigil reads the key&apos;s live usage and
+        Cap spend through a Bifrost virtual key. Prescera reads the key&apos;s live usage and
         enforces the limit on every model call.
       </p>
       <Field
         label="Bifrost virtual key"
-        hint="The virtual key Vigil bills against — copy it from your Bifrost dashboard."
+        hint="The virtual key Prescera bills against — copy it from your Bifrost dashboard."
         error={vkError}
       >
         <TextInput

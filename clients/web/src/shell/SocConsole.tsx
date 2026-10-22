@@ -367,12 +367,12 @@ function SocConsoleInner() {
       {!chatOpen && !viewFull && (
         <button
           className="chat-fab"
-          title="Ask Vigil - AI assistant"
-          aria-label="Ask Vigil chat assistant"
+          title="Ask Prescera - AI assistant"
+          aria-label="Ask Prescera chat assistant"
           onClick={() => openChat()}
         >
           <Icon name="brain" />
-          <span>Ask Vigil</span>
+          <span>Ask Prescera</span>
         </button>
       )}
       </ToastProvider>

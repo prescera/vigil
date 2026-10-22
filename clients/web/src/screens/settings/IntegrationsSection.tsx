@@ -25,7 +25,7 @@ const TABS: [IntegrationsTab, string][] = [
   // "Connector" is the page extension (CONTEXT.md); these are the MCP servers
   // Vigil calls out to, and the next tab is the one Vigil is.
   ['servers', 'MCP Servers'],
-  ['surface', 'Vigil’s MCP Server'],
+  ['surface', 'Prescera’s MCP Server'],
   ['ingestion', 'Manual Upload'],
   ['detection', 'Detection Rules'],
 ]

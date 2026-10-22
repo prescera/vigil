@@ -3170,7 +3170,7 @@ function AgentEditModal({ agentId, onClose, onSaved }: { agentId: string | null;
           {/* AI assist — describe the agent and let Vigil draft the fields */}
           <div className="border border-line rounded-[8px] overflow-hidden">
             <button className="w-full flex items-center gap-2 px-3 py-2.5 text-[12.5px] text-tx-2 bg-bg hover:bg-panel" onClick={() => setAiOpen((v) => !v)}>
-              <Icon name="sparkle" size={14} /> AI assist — describe the agent, Vigil drafts the fields
+              <Icon name="sparkle" size={14} /> AI assist — describe the agent, Prescera drafts the fields
               <span className="ml-auto" style={{ transform: aiOpen ? 'rotate(90deg)' : 'none', transition: 'transform .12s', display: 'inline-flex' }}><Icon name="chevR" size={13} /></span>
             </button>
             {aiOpen && (

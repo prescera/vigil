@@ -1188,7 +1188,7 @@ function CasesDetail({
                     <Icon name="trash" /> Delete case
                   </button>
                 )}
-                <button className="btn primary to-vigil-case" onClick={() => openChat(casePrompt(c))}><Icon name="brain" /> Open in Vigil</button>
+                <button className="btn primary to-vigil-case" onClick={() => openChat(casePrompt(c))}><Icon name="brain" /> Open in Prescera</button>
               </div>
             </div>
           ) : (

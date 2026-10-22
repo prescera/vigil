@@ -578,7 +578,7 @@ export default function Chat({
       if (currentKeyRef.current && curText) {
         const summary = curText.replace(/[#*`_>[\]]/g, '').replace(/\s+/g, ' ').trim().slice(0, 140)
         notificationService.notifyInvestigationComplete({
-          title: 'Vigil',
+          title: 'Prescera',
           summary: summary || 'Analysis complete',
         })
       }
@@ -601,7 +601,7 @@ export default function Chat({
     } catch (e) {
       const err = e as { name?: string; message?: string }
       if (err?.name !== 'AbortError') {
-        setMessages((m) => [...m, { role: 'error', text: `Could not reach Vigil: ${err?.message || e}. Is the backend running?` }])
+        setMessages((m) => [...m, { role: 'error', text: `Could not reach Prescera: ${err?.message || e}. Is the backend running?` }])
       }
     } finally {
       setLoading(false)
@@ -877,14 +877,14 @@ export default function Chat({
       ref={panelRef}
       className={`chat${open ? ' open' : ''}${resizing ? ' resizing' : ''}`}
       role="dialog"
-      aria-label="Vigil Assistant"
+      aria-label="Prescera Assistant"
       aria-hidden={!open}
       onKeyDown={onPanelKeyDown}
     >
       <div
         className="chat-resize-handle"
         role="separator"
-        aria-label="Resize Vigil Assistant"
+        aria-label="Resize Prescera Assistant"
         aria-orientation="vertical"
         aria-valuemin={Math.round(minWidth)}
         aria-valuemax={Math.round(maxWidth)}
@@ -898,20 +898,20 @@ export default function Chat({
       />
       <div className="chat-head">
         <span className="ch-ico"><Icon name="brain" /></span>
-        <h3 className="ch-title">Vigil Assistant</h3>
+        <h3 className="ch-title">Prescera Assistant</h3>
         <div className="hbtns">
           <button title="History" onClick={() => { setHistoryOpen(true); reloadHistory() }}><Icon name="clock" /></button>
           <button title="Reasoning trace" onClick={openReasoningTrace}><Icon name="reason" /></button>
           <button title="SOC Agents" onClick={() => setAgentsInfoOpen(true)}><Icon name="note" /></button>
           <button title="Chat settings" onClick={() => setSettingsOpen(true)}><Icon name="gear" /></button>
           <button title="Clear chat" onClick={reset} disabled={loading || messages.length === 0}><Icon name="trash" /></button>
-          <button type="button" title="Close assistant" aria-label="Close Vigil Assistant" onClick={onClose}><Icon name="close" /></button>
+          <button type="button" title="Close assistant" aria-label="Close Prescera Assistant" onClick={onClose}><Icon name="close" /></button>
         </div>
       </div>
 
       <div className="chat-body" ref={bodyRef}>
         {messages.length === 0 && !loading && (
-          <div className="chat-empty">Ask Vigil to investigate a finding, correlate activity, or summarize a case.</div>
+          <div className="chat-empty">Ask Prescera to investigate a finding, correlate activity, or summarize a case.</div>
         )}
         {messages.map((m, i) =>
           m.role === 'user' ? (
@@ -929,7 +929,7 @@ export default function Chat({
             <div className="vigil-status" aria-live="polite">
               <span className="vs-dots" aria-hidden="true"><i /><i /><i /></span>
               <span className="vs-label">
-                {isProcessingTools ? 'Vigil is running tools' : streamText ? 'Vigil is responding' : 'Vigil is working on it'}
+                {isProcessingTools ? 'Prescera is running tools' : streamText ? 'Prescera is responding' : 'Prescera is working on it'}
                 …
               </span>
             </div>
@@ -954,7 +954,7 @@ export default function Chat({
           <textarea
             ref={taRef}
             rows={1}
-            placeholder="Ask Vigil, / for commands, @ for context"
+            placeholder="Ask Prescera, / for commands, @ for context"
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
             onKeyDown={onKeyDown}

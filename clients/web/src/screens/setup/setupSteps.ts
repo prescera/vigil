@@ -76,7 +76,7 @@ export const SETUP_STEPS: SetupStep[] = [
   {
     id: 'data-source',
     label: 'Connect a data source',
-    description: 'A SIEM or EDR so Vigil has alerts to triage.',
+    description: 'A SIEM or EDR so Prescera has alerts to triage.',
     doneLabel: 'Connected',
     tier: 'recommended',
     settingsSection: 'integrations',
@@ -94,7 +94,7 @@ export const SETUP_STEPS: SetupStep[] = [
   {
     id: 'cost-guardrails',
     label: 'Set cost guardrails',
-    description: 'Cap how much Vigil spends each month.',
+    description: 'Cap how much Prescera spends each month.',
     doneLabel: 'Configured',
     tier: 'optional',
     settingsSection: 'ai-config',
@@ -103,7 +103,7 @@ export const SETUP_STEPS: SetupStep[] = [
   {
     id: 'autonomy',
     label: 'Enable autonomous mode',
-    description: 'Let Vigil triage and investigate 24/7, within your cost caps.',
+    description: 'Let Prescera triage and investigate 24/7, within your cost caps.',
     doneLabel: 'Enabled',
     tier: 'optional',
     settingsSection: 'autoinvestigate',

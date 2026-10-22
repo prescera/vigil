@@ -54,7 +54,7 @@ const Header = () => (
     <span className="inline-grid place-items-center w-12 h-12 rounded-lg bg-accent-dim text-accent-2 mb-3">
       <VigilMark className="w-6 h-6" />
     </span>
-    <h1 className="text-tx text-xl font-semibold">Welcome to Vigil</h1>
+    <h1 className="text-tx text-xl font-semibold">Welcome to Prescera</h1>
     <p className="text-tx-3 text-sm mt-1">
       Just one thing to start: connect an AI provider. Everything else is
       optional and can wait.
@@ -214,7 +214,7 @@ const SetupScreen = () => {
         <Header />
         <SettingsCard title="Setup required" desc="Administrator access needed">
           <p className="text-tx-2 text-sm">
-            Vigil isn&apos;t set up yet. Ask an administrator to add an AI provider in
+            Prescera isn&apos;t set up yet. Ask an administrator to add an AI provider in
             Settings → AI Config.
           </p>
         </SettingsCard>

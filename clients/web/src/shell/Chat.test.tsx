@@ -43,7 +43,7 @@ beforeAll(() => {
   Object.defineProperty(window, 'PointerEvent', { configurable: true, value: TestPointerEvent })
 })
 
-describe('Vigil Assistant resize controls', () => {
+describe('Prescera Assistant resize controls', () => {
   it('supports keyboard resizing and exposes a reachable close action', () => {
     const onClose = vi.fn()
     const onWidthChange = vi.fn()
@@ -60,7 +60,7 @@ describe('Vigil Assistant resize controls', () => {
       />,
     )
 
-    const separator = screen.getByRole('separator', { name: 'Resize Vigil Assistant' })
+    const separator = screen.getByRole('separator', { name: 'Resize Prescera Assistant' })
     expect(separator).toHaveAttribute('aria-valuemin', '360')
     expect(separator).toHaveAttribute('aria-valuemax', '600')
     expect(separator).toHaveAttribute('aria-valuenow', '420')
@@ -75,7 +75,7 @@ describe('Vigil Assistant resize controls', () => {
     fireEvent.keyDown(separator, { key: 'Home' })
     expect(onWidthCommit).toHaveBeenLastCalledWith(360)
 
-    fireEvent.click(screen.getByRole('button', { name: 'Close Vigil Assistant' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Close Prescera Assistant' }))
     expect(onClose).toHaveBeenCalledTimes(1)
   })
 
@@ -94,7 +94,7 @@ describe('Vigil Assistant resize controls', () => {
       />,
     )
 
-    const separator = screen.getByRole('separator', { name: 'Resize Vigil Assistant' })
+    const separator = screen.getByRole('separator', { name: 'Resize Prescera Assistant' })
     fireEvent.pointerDown(separator, { pointerId: 7, button: 0, clientX: 420 })
     fireEvent.pointerMove(separator, { pointerId: 7, clientX: 370 })
     fireEvent.pointerUp(separator, { pointerId: 7, clientX: 370 })
