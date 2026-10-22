@@ -146,6 +146,16 @@ export const evolutionApi = {
   getCycle: (cycleId: string) => api.get(`/evolution/cycles/${cycleId}`),
   listDetectors: () => api.get('/evolution/detectors'),
   stats: (workflowId: string) => api.get(`/evolution/stats/${workflowId}`),
+  // file-based hunts with declared hypotheses: what Evolve can act on
+  listPlaybooks: () => api.get('/evolution/playbooks'),
+  // writes a new hunt WORKFLOW.md from a description of an APT
+  synthesize: (description: string) =>
+    api.post('/evolution/synthesize', { description }, { timeout: LLM_TIMEOUT }),
+  // enqueues one headless run of the hunt, adding to the population Evolve folds
+  runPlaybook: (workflowId: string) => api.post(`/evolution/playbooks/${workflowId}/run`),
+  // one evolution cycle over the hunt's finished runs; may rewrite its WORKFLOW.md
+  evolve: (workflowId: string) =>
+    api.post(`/evolution/playbooks/${workflowId}/evolve`, {}, { timeout: LLM_TIMEOUT }),
 }
 
 export const approvalsApi = {
